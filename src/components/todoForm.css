@@ -1,0 +1,25 @@
+.todo-form {
+  padding-bottom: 2.5rem;
+}
+
+input,
+select,
+option {
+  background: transparent;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid #413c8b;
+  }
+
+  &::placeholder {
+    color: #979797;
+  }
+}
