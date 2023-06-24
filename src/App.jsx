@@ -63,15 +63,15 @@ function App() {
 
   return (
     <>
-      <div className='app'>
+      <main className='app'>
         <h1>Lista de tarefas</h1>
-        <div className='filters'>
+        <article className='filters'>
           <Search search={search} setSearch={setSearch} />
           <FilterStatus statusFilter={statusFilter} setStatusFilter={setStatusFilter} />
           <Ordination setSort={setSort} />
-        </div>
+        </article>
         <hr />
-        <div className='todo-list'>
+        <section className='todo-list'>
           {todos
             .filter(todo => (statusFilter ? todo.isCompleted.toString() === statusFilter : true))
             .filter(todo => todo.text.toLowerCase().includes(search.toLowerCase()))
@@ -79,10 +79,10 @@ function App() {
             .map(todo => (
               <Todo key={todo.id} todo={todo} removeTask={removeTask} completeTask={completeTask} />
             ))}
-        </div>
+        </section>
         <hr />
         <TodoForm addTask={addTask} />
-      </div>
+      </main>
     </>
   )
 }

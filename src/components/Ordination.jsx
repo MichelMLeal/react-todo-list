@@ -1,13 +1,16 @@
 export const Ordination = ({ setSort }) => {
   return (
-    <div>
-      <h3>Ordenar:</h3>
-      <div className='ordination-buttons'>
+    <section>
+      <label>Ordenar:</label>
+      <section className='ordination-buttons'>
         <button
           type='button'
           onClick={() => {
             setSort('asc')
           }}
+          aria-label='Ordenar em ordem alfabética crescente'
+          role='button'
+          aria-pressed='false'
         >
           Asc
         </button>
@@ -16,10 +19,13 @@ export const Ordination = ({ setSort }) => {
           onClick={() => {
             setSort('desc')
           }}
+          aria-label='Ordenar em ordem alfabética decrescente'
+          role='button'
+          aria-pressed='false'
         >
           Desc
         </button>
-      </div>
-    </div>
+      </section>
+    </section>
   )
 }

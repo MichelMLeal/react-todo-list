@@ -15,7 +15,7 @@ export const TodoForm = ({ addTask }) => {
   }
 
   return (
-    <div className='todo-form'>
+    <article className='todo-form'>
       <h2>Criar tarefa:</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -25,12 +25,14 @@ export const TodoForm = ({ addTask }) => {
           placeholder='Digite o título'
           onChange={e => setTitle(e.target.value)}
           value={title}
+          aria-label='Digite o título da tarefa'
         />
         <select
           name='slt_categoty'
           id='slt_categoty'
           onChange={e => setCategory(e.target.value)}
           value={category}
+          aria-label='Selecione uma categoria para a tarefa'
         >
           <option value=''>Selecione uma categoria</option>
           <option value='Trabalho'>Trabalho</option>
@@ -39,6 +41,6 @@ export const TodoForm = ({ addTask }) => {
         </select>
         <button type='submit'>Criar Tarefa</button>
       </form>
-    </div>
+    </article>
   )
 }

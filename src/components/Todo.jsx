@@ -1,19 +1,20 @@
 import './todo.css'
 export const Todo = ({ todo, removeTask, completeTask }) => {
   return (
-    <div key={todo.id} className='todo-item'>
-      <div className='content'>
+    <article key={todo.id} className='todo-item'>
+      <section className='content'>
         <p className='title' style={{ textDecoration: todo.isCompleted ? 'line-through' : '' }}>
           {todo.text} <span className={`${todo.isCompleted ? 'task-complete' : ''}`} />
         </p>
         <p className='category'>{todo.category}</p>
-      </div>
-      <div className='todo-buttons'>
+      </section>
+      <section className='todo-buttons'>
         <button
           className='complete'
           onClick={() => {
             completeTask(todo.id)
           }}
+          aria-label={`Completar a tarefa: ${todo.text}`}
         >
           Completar
         </button>
@@ -23,10 +24,11 @@ export const Todo = ({ todo, removeTask, completeTask }) => {
             alert('Excluindo tarefa: ' + todo.text)
             removeTask(todo.id)
           }}
+          aria-label={`Excluindo a tarefa: ${todo.text}`}
         >
           Excluir
         </button>
-      </div>
-    </div>
+      </section>
+    </article>
   )
 }
